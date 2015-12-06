@@ -138,7 +138,23 @@ def bar_chart_northeast():
     plt.legend()
     plt.tight_layout() 
     plt.show()
+
+def pie_chart():
+    # Data to plot
+    labels = 'Central', 'North', 'NortEast', 'South'
+    sizes = [17645244.9931999, 10818759.0109, 17404374.0166001, 7862282.60390006]
+    colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
+    explode = (0.1, 0, 0, 0)  # explode 1st slice 
+    # Plot
+    plt.pie(sizes, explode=explode, labels=labels, colors=colors,
+            autopct='%1.1f%%', shadow=True, startangle=140)
+ 
+    plt.axis('equal')
+    plt.title('Total of Reading_Thailand')
+    plt.legend()
+    plt.show()
 def main():
+    pie_chart()
     bar_chart_central()
     bar_chart_north()
     bar_chart_northeast()
